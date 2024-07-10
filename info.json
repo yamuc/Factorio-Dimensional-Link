@@ -1,0 +1,9 @@
+{
+    "name": "dimensional-link",
+    "version": "0.1.0",
+    "title": "Dimensional Link",
+    "author": "Me :)",
+    "factorio_version": "1.1",
+    "dependencies": ["base >= 1.1"],
+    "description": "Mod adding a new material, processing chain and aspect to factories.\n (this will be super jank as it's my first foray into modding) "
+  }
