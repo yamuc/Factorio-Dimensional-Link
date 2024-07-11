@@ -1,0 +1,7 @@
+TODO:
+
+ - fluid inputs working
+ - mixed energy
+    - electricity req + fluid consumption
+    - may have to do some jank with inventory stuff
+ - generative recipies for stuff
