@@ -1,5 +1,49 @@
 --data.lua
 
+
+-- Start by adding new buildings, recipies and items
+-- I think just having the prototypes be ore => shards => canister would work
+
+
+
+--Functions adapted from the eradicators hand crank generator example mod
+local function config(name)
+  return settings.startup['yc:'..name].value
+  end
+
+local function sprite(name)
+  return '__dimensional-link__/sprites/'..name
+  end
+  
+local function sound(name)
+  return '__dimensional-link__/sounds/'..name
+  end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- Old code from the tutorial left in for reference
+ 
+--[[ 
 local fireArmor = table.deepcopy(data.raw["armor"]["heavy-armor"]) -- copy the table that defines the heavy armor item into the fireArmor variable
 
 fireArmor.name = "fire-armor"
@@ -45,3 +89,4 @@ local recipe = {
 }
 
 data:extend{fireArmor, recipe}
+ ]]
