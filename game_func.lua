@@ -46,7 +46,7 @@ function Mfunc:new (nCoef, coef)
     return o
 end
 
--- Updates a coefficient
+--Might deprecate one of these as they more or less do the same thing
 function Mfunc:setCoef(index, value)
     if (index > self.nCoef or index < 1) then
         print("Out of bounds error")
@@ -85,6 +85,13 @@ end
 
 
 
+-- TODO: read up on inherits more and get sin + transitional func working
+--  transitional func will prob just be a polynomial with some method to iterate up in order to find the "best" fit
+--  more work to be done in desmos/on the math side
+SinFunc = Mfunc:new()
+function SinFunc:calc(t)
+    return (self.coef[1]*math.sin(self.coef[2]*t))
+end
 
 
 

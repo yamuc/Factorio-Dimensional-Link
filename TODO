@@ -5,3 +5,9 @@ TODO:
     - electricity req + fluid consumption
     - may have to do some jank with inventory stuff
  - generative recipies for stuff
+
+
+ - Read up on working of lua classes (metatables __index and inheritance)
+   - https://www.lua.org/pil/contents.html 
+   - chapter 5 + 6 cover functions 
+   - pretty much all of part II 
