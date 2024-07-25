@@ -30,3 +30,70 @@ Randomized Starting Values:
         Finer variations
          - Could add more trig functions but I think this works for now
 ]]
+
+Mfunc = {}
+function Mfunc:new (nCoef, coef)
+    nCoef = nCoef or 0
+    coef = coef or {}
+    if(#coef ~= nCoef) then
+        print("Coefficient count and lists do not match; Aborting.")  
+        return nil
+    end
+
+    local o = {nCoef = nCoef, coef = coef}
+    setmetatable(o, self)
+    self.__index = self
+    return o
+end
+
+-- Updates a coefficient
+function Mfunc:setCoef(index, value)
+    if (index > self.nCoef or index < 1) then
+        print("Out of bounds error")
+        return nil
+    end
+    local out = self.coef[index]
+    self.coef[index] = value
+    return out
+end
+
+function Mfunc:updateCoef(index, value)
+    if (index > self.nCoef or index < 1) then
+        print("Out of bounds error")
+        return nil
+    end
+    local out = self.coef[index]
+    self.coef[index] = out + value
+    return out
+end
+
+-- param t: time based on ticks
+-- Overide for class inherits
+function Mfunc:calc (t)
+    --[[
+    local total = 0
+    for i=1,self.nCoef do
+        total = total + t*self.coef[i]
+    end
+    ]]
+    local total = 0
+    for i=1,self.nCoef do
+        total = total + self.coef[i]
+    end
+    return total
+end
+
+
+
+
+
+
+local test = Mfunc:new(2, {1, 2})
+
+if test == nil then
+    print("nil")
+else
+    print(test:calc(1))
+    print("Previous value: " .. test:setCoef(2, 5))
+    print(test:calc(1))
+end
